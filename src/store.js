@@ -13,8 +13,7 @@ export default createStore({
         UPDATE_TASK (state, payload) {
             const index = state.tasks.findIndex(item => item.id === payload.id);
 
-            if (index !== -1) 
-            {
+            if (index !== -1) {
                 state.tasks[index].description = payload.description;
             }
         },
@@ -23,8 +22,7 @@ export default createStore({
         },
         CHANGE_TASK_STATUS (state, payload) {
             state.tasks = state.tasks.map(item => {
-                if (item.id === payload.id) 
-                {
+                if (item.id === payload.id) {
                     item.completed = !payload.completed;
                 }
 
