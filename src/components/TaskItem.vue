@@ -41,15 +41,9 @@ const changeTaskStatus = (id, completed) => {
       </div>
 
       <div class="d-flex gap-1 ms-2">
-        <button type="button" class="btn btn-warning btn-sm" @click="editTask" v-if="!editTaskFlag">
-          <i class="fas fa-pencil-alt"></i>
-        </button>
-        <button type="button" class="btn btn-success btn-sm" @click="saveTask(task)" v-else>
-          <i class="fas fa-save"></i>
-        </button>
-        <button type="button" class="btn btn-danger btn-sm" @click="deleteTask(task.id)">
-          <i class="fa fa-trash"></i>
-        </button>
+        <button type="button" class="btn btn-warning btn-sm" @click="editTask" v-if="!editTaskFlag"><i class="fas fa-pencil-alt"></i></button>
+        <button type="button" class="btn btn-success btn-sm" @click="saveTask(task)" v-else><i class="fas fa-save"></i></button>
+        <button type="button" class="btn btn-danger btn-sm" @click="deleteTask(task.id)"><i class="fa fa-trash"></i></button>
       </div>
     </div>
   </div>

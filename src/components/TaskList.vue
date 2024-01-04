@@ -3,7 +3,7 @@ import TaskItem from './TaskItem.vue';
 
 defineProps({
     tasks: Array
-})
+});
 </script>
 
 <template>
