@@ -23,7 +23,7 @@ export default createStore({
         CHANGE_TASK_STATUS (state, payload) {
             state.tasks = state.tasks.map(item => {
                 if (item.id === payload.id) {
-                    item.completed = !payload.completed;
+                    item.completed = payload.completed;
                 }
 
                 return item;

@@ -12,15 +12,15 @@ const editTaskFlag  = ref(false);
 const editTask = () => {
   editTaskFlag.value = true;
 }
-const saveTask = ({ id, description }) => {
+const saveTask = (task) => {
   editTaskFlag.value = false;
 
-  store.commit('UPDATE_TASK', { id, description });
+  store.commit('UPDATE_TASK', task);
 }
 const deleteTask = (id) => {
   store.commit('DELETE_TASK', id);
 }
-const changeTaskStatus = ({ id, completed }) => {
+const changeTaskStatus = (id, completed) => {
   store.commit('CHANGE_TASK_STATUS', { id, completed });
 }
 </script>
@@ -29,7 +29,7 @@ const changeTaskStatus = ({ id, completed }) => {
   <div class="card">
     <div class="card-body">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" :id="'chk' + task.id" @change="changeTaskStatus(task)">
+        <input type="checkbox" class="form-check-input" :id="'chk' + task.id" @change="changeTaskStatus(task.id, !task.completed)">
         <label class="form-check-label" :for="'chk' + task.id">
           <input type="text" class="form-control form-control-sm" v-model="task.description" @keyup.enter="saveTask(task)" v-if="editTaskFlag">
           <span v-else>
