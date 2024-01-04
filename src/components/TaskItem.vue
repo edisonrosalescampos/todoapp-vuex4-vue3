@@ -40,7 +40,7 @@ const changeTaskStatus = ({ id, completed }) => {
         <span class="badge bg-danger px-1" v-else>pending</span>
       </div>
 
-      <div class="d-flex gap-1">
+      <div class="d-flex gap-1 ms-2">
         <button type="button" class="btn btn-warning btn-sm" @click="editTask" v-if="!editTaskFlag">
           <i class="fas fa-pencil-alt"></i>
         </button>

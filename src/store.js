@@ -7,8 +7,8 @@ export default createStore({
         }
     },
     mutations: {
-        ADD_TASK (state, payload) {
-            state.tasks.unshift(payload);
+        ADD_TASK (state, newTask) {
+            state.tasks.unshift(newTask);
         },
         UPDATE_TASK (state, payload) {
             const index = state.tasks.findIndex(item => item.id === payload.id);
